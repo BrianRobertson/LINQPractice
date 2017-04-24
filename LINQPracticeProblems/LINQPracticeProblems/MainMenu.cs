@@ -6,11 +6,26 @@ using System.Threading.Tasks;
 
 namespace LINQPracticeProblems
 {
-    class MainMenu
+    public class MainMenu
     {
+        //Member variables
+        List<string> listOfStrings = new List<string>() { "one", "two", "two", "three", "four", "three", "five", "six" };
+        public MainMenu()
+        {
+            //constructor.
+        }
         public void Start()
         {
-            Console.WriteLine("Hello World.");
+            string delimiter = ", ";
+            Console.WriteLine("Here is the old list: " + listOfStrings.Aggregate((i, j) => i + delimiter + j));
+            RemoveDuplicatesFromStringList();
+        }
+
+        public void RemoveDuplicatesFromStringList()
+        {
+            var listOfStringsWithOutDuplicates = listOfStrings.Distinct().ToList();
+            string delimiter = ", ";
+            Console.WriteLine("Here is the new list: " + listOfStringsWithOutDuplicates.Aggregate((i, j) => i + delimiter + j) + "\n");
         }
     }
 }

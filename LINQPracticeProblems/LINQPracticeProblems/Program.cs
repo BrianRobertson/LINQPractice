@@ -10,6 +10,7 @@ namespace LINQPracticeProblems
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("LINQ Practice Problems.\n");
             new MainMenu().Start();
             Console.ReadLine();
         }
